@@ -37,7 +37,7 @@ function App() {
     }
     setLoadingUpload(true);
     try {
-      const signatureResponse = await axios.post('http://localhost:5009/generate-signature');
+      const signatureResponse = await axios.post('https://careers.apnimandi.us/api/generate-signature');
       const { signature, timestamp, api_key, cloud_name } = signatureResponse.data;
 
       const formData = new FormData();
@@ -85,7 +85,7 @@ function App() {
     }
 
     try {
-      await axios.post('http://localhost:5009/submit-application', formData);
+      await axios.post('https://careers.apnimandi.us/api/submit-application', formData);
       alert('Application submitted successfully!');
       setFormData({
         name: '',
