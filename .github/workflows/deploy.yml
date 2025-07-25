@@ -35,6 +35,6 @@ jobs:
             git pull https://${{ secrets.TOKEN }}:${{ secrets.TOKEN }}@github.com/Heydo-Tech/CarrersFrontend.git
             npm install --force
             npm run build
-            rm -rf /var/www/CarrersFrontend/build
-            mv /root/careers.apnimandi.us/CarrersFrontend/build /var/www/CarrersFrontend/
+            rm -rf /var/www/CarrersFrontend/dist
+            mv /root/careers.apnimandi.us/CarrersFrontend/dist /var/www/CarrersFrontend/
             systemctl restart nginx
